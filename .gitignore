@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+secret.md
 
 # Virtual Environments
 venv/
