@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Database files
+*.sqlite3
+db.sqlite3
+
+# Build and distribution artifacts
+/build/
+/dist/
+
+# Dependency directories (if using npm/yarn)
+node_modules/
+yarn-error.log
+
+# Local IDE and OS files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Django/Python specific files
+# Settings files that might contain local secrets (DO NOT COMMIT)
+*/settings.py
+*/local_settings.py
+
+# --- Django Specific ---
+# Keep the migration folders and their contents, as they track schema changes.
+# If you want to ignore the entire migrations directory, uncomment the line below.
+# /apps/*/migrations/
+
+# Static files:
+# We generally want to track the source assets (in static/) but ignore generated/collected ones.
+# If you are using collectstatic, you might want to track the contents of staticfiles/
+# but ignore the directory itself if it's just a build output.
+# For now, I'll keep the ignore for the directory, but you might need to adjust this
+# based on your deployment process.
+/staticfiles/

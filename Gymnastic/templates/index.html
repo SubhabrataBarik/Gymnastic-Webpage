@@ -1,0 +1,420 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Training Studio - Free CSS Template</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-training-studio.css' %}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{{ header.logo_url }}" class="logo">
+                          {{ header.logo_text }}<em> {{ header.logo_em_text }}</em>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">{{ header.nav_home_label }}</a></li>
+                            <li class="scroll-to-section"><a href="#features">{{ header.nav_about_label }}</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">{{ header.nav_classes_label }}</a></li>
+                            <li class="scroll-to-section"><a href="#schedule">{{ header.nav_schedules_label }}</a></li>
+                            <li class="scroll-to-section"><a href="#contact-us">{{ header.nav_contact_label }}</a></li>
+                            <li class="main-button"><a href="{{ header.nav_signup_url }}">{{ header.nav_signup_label }}</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="{{ hero.video_source }}" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>{{ hero.subtitle }}</h6>
+                <h2>{{ hero.title_plain }} <em>{{ hero.title_em }}</em></h2>
+                <div class="main-button scroll-to-section">
+                    <a href="{{ hero.cta_button_url }}">{{ hero.cta_button_text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Features Item Start ***** -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>{{ features.section_title }} <em>{{ features.section_title_em }}</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="waves">
+                        <p>{{ features.section_description }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        {% for item in feature_items|slice:":3" %}
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                {% if item.icon %}
+                                    <img src="{{ item.icon.url }}" alt="{{ item.title }}">
+                                {% else %}
+                                    <img src="{% static 'assets/images/features-first-icon.png' %}" alt="{{ item.title }}">
+                                {% endif %}
+                            </div>
+                            <div class="right-content">
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.description }}</p>
+                                <a href="{{ item.link_url }}" class="text-button">{{ item.link_text }}</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        {% for item in feature_items|slice:"3:" %}
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                {% if item.icon %}
+                                    <img src="{{ item.icon.url }}" alt="{{ item.title }}">
+                                {% else %}
+                                    <img src="{% static 'assets/images/features-first-icon.png' %}" alt="{{ item.title }}">
+                                {% endif %}
+                            </div>
+                            <div class="right-content">
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.description }}</p>
+                                <a href="{{ item.link_url }}" class="text-button">{{ item.link_text }}</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Item End ***** -->
+
+    <!-- ***** Call to Action Start ***** -->
+    <section class="section" id="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
+                        <h2>
+                          {{ cta.title_part_1 }}
+                          <em>{{ cta.title_em_1 }}</em>{{ cta.title_part_2 }}
+                          <em>{{ cta.title_em_2 }}</em>{{ cta.title_suffix }}
+                        </h2>
+                        <p>{{ cta.description }}</p>
+                        <div class="main-button scroll-to-section">
+                            <a href="{{ cta.button_url }}">{{ cta.button_text }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Call to Action End ***** -->
+
+    <!-- ***** Our Classes Start ***** -->
+    <section class="section" id="our-classes">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>{{ classes_section.section_title }} <em>{{ classes_section.section_title_em }}</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                        <p>{{ classes_section.section_description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="tabs">
+              <div class="col-lg-4">
+                <ul>
+                  {% for class in training_classes %}
+                  <li>
+                    <a href="#tabs-{{ forloop.counter }}">
+                        {% if class.tab_icon %}
+                            <img src="{{ class.tab_icon.url }}" alt="">
+                        {% else %}
+                            <img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">
+                        {% endif %}
+                        {{ class.tab_label }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                  <div class="main-rounded-button">
+                    <a href="{{ classes_section.view_all_url }}">{{ classes_section.view_all_text }}</a>
+                  </div>
+                </ul>
+              </div>
+              <div class="col-lg-8">
+                <section class="tabs-content">
+                  {% for class in training_classes %}
+                  <article id="tabs-{{ forloop.counter }}">
+                    <img src="{{ class.image.url }}" alt="{{ class.image_alt }}">
+                    <h4>{{ class.name }}</h4>
+                    <p>{{ class.description }}</p>
+                    <div class="main-button">
+                        <a href="{{ class.schedule_url }}">{{ class.schedule_button_text }}</a>
+                    </div>
+                  </article>
+                  {% endfor %}
+                </section>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Our Classes End ***** -->
+    
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading dark-bg">
+                        <h2>{{ schedule_section.section_title }} <em>{{ schedule_section.section_title_em }}</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                        <p>{{ schedule_section.section_description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="filters">
+                        <ul class="schedule-filter">
+                            <li class="active" data-tsfilter="monday">Monday</li>
+                            <li data-tsfilter="tuesday">Tuesday</li>
+                            <li data-tsfilter="wednesday">Wednesday</li>
+                            <li data-tsfilter="thursday">Thursday</li>
+                            <li data-tsfilter="friday">Friday</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="schedule-table filtering">
+                        <table>
+                            <tbody>
+                                {% for entry in schedule_entries %}
+                                <tr>
+                                    <td class="day-time">{{ entry.class_name }}</td>
+                                    <td class="{{ entry.slot_1_day }} ts-item{% if entry.slot_1_day == 'monday' %} show{% endif %}"
+                                        data-tsmeta="{{ entry.slot_1_day }}">
+                                        {{ entry.slot_1_time }}
+                                    </td>
+                                    <td class="{{ entry.slot_2_day }} ts-item{% if entry.slot_2_day == 'monday' %} show{% endif %}"
+                                        data-tsmeta="{{ entry.slot_2_day }}">
+                                        {{ entry.slot_2_time }}
+                                    </td>
+                                    <td>{% if entry.trainer %}{{ entry.trainer.name }}{% endif %}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Testimonials Starts ***** -->
+    <section class="section" id="trainers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>{{ trainers_section.section_title }} <em>{{ trainers_section.section_title_em }}</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                        <p>{{ trainers_section.section_description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for trainer in trainers %}
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="{{ trainer.photo.url }}" alt="{{ trainer.photo_alt }}">
+                        </div>
+                        <div class="down-content">
+                            <span>{{ trainer.specialty }}</span>
+                            <h4>{{ trainer.name }}</h4>
+                            <p>{{ trainer.bio }}</p>
+                            <ul class="social-icons">
+                                {% if trainer.facebook_url %}
+                                <li><a href="{{ trainer.facebook_url }}"><i class="fa fa-facebook"></i></a></li>
+                                {% endif %}
+                                {% if trainer.twitter_url %}
+                                <li><a href="{{ trainer.twitter_url }}"><i class="fa fa-twitter"></i></a></li>
+                                {% endif %}
+                                {% if trainer.linkedin_url %}
+                                <li><a href="{{ trainer.linkedin_url }}"><i class="fa fa-linkedin"></i></a></li>
+                                {% endif %}
+                                {% if trainer.behance_url %}
+                                <li><a href="{{ trainer.behance_url }}"><i class="fa fa-behance"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ***** Testimonials Ends ***** -->
+    
+    <!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div id="map">
+                        <iframe
+                            src="{{ contact.google_maps_embed_url }}"
+                            width="100%"
+                            height="{{ contact.map_height }}px"
+                            frameborder="0"
+                            style="border:0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="/api/contact/" method="post">
+                          {% csrf_token %}
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Your Name*" required>
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required>
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                              <fieldset>
+                                <input name="subject" type="text" id="subject" placeholder="Subject">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Message" required></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>{{ footer.copyright_text }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('contact').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        fetch('/api/contact/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}',
+            },
+            body: JSON.stringify(Object.fromEntries(data))
+        })
+        .then(r => r.json())
+        .then(res => {
+            if (res.success) {
+                form.reset();
+                alert('Message sent! We will get back to you soon.');
+            }
+        })
+        .catch(() => alert('Something went wrong. Please try again.'));
+    });
+    </script>
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script>
+    <script src="{% static 'assets/js/mixitup.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+    
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+  </body>
+</html>

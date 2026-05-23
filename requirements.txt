@@ -1,0 +1,7 @@
+django 
+djangorestframework 
+django-solo 
+pillow 
+django-ordered-model 
+djangorestframework
+django-cors-headers
