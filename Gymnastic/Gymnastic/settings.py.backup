@@ -24,7 +24,7 @@ import os
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-406&(^cux7dn3e3sgmo1zsvxx@)tt3mr$yhg%pwu)lc!39w*nx')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Check if we're on PythonAnywhere
 if 'PYTHONANYWHERE' in os.environ:
