@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default email sender
-DEFAULT_FROM_EMAIL = 'noreply@bendresgymnasticsclub.com'
+DEFAULT_FROM_EMAIL = 'subhabratabarik7@gmail.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -195,5 +195,5 @@ else:
 
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
+    
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

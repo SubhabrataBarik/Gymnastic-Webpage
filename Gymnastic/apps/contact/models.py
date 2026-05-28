@@ -18,3 +18,19 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"[{self.submitted_at:%Y-%m-%d}] {self.name} — {self.subject or '(no subject)'}"
+
+
+class EmailRecipient(models.Model):
+    """Model to store email recipients that can be managed via Django Admin."""
+    email = models.EmailField()
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['email']
+        verbose_name = "Email Recipient"
+        verbose_name_plural = "Email Recipients"
+
+    def __str__(self):
+        return self.email

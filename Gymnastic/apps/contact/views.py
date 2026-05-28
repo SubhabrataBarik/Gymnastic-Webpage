@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import ContactMessage
+from .models import ContactMessage, EmailRecipient
 from .serializers import ContactMessageSerializer
 from django.core.mail import send_mail
 from django.conf import settings
@@ -30,8 +30,13 @@ IP Address: {contact_message.ip_address or 'Not available'}
             
 This message was automatically sent from the contact form on Bendre's Gymnastics Club website.
             """
-            from_email = settings.DEFAULT_FROM_EMAIL if hasattr(settings, 'DEFAULT_FROM_EMAIL') else 'noreply@bendresgymnasticsclub.com'
-            recipient_list = ['subhabratabarik7@gmail.com']
+            from_email = settings.DEFAULT_FROM_EMAIL if hasattr(settings, 'DEFAULT_FROM_EMAIL') else 'subhabratabarik7@gmail.com'
+            # Get active email recipients from the database
+            recipient_list = list(EmailRecipient.objects.filter(is_active=True).values_list('email', flat=True))
+            
+            # If no recipients are configured, fall back to default
+            if not recipient_list:
+                recipient_list = ['bariksubhabrata945gmail.com', 'bendregymnasticclub@gmail.com']
             
             try:
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)
