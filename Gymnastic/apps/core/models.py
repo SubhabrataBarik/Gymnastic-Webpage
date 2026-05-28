@@ -85,7 +85,7 @@ class FeaturesSection(SingletonModel):
     section_title_em    = models.CharField(max_length=100, default="Program",
                               help_text="Italic/highlighted word in section heading (<em>)")
     section_description = models.TextField(
-        default="Training Studio is free CSS template for gyms and fitness centers.")
+        default="Bendre’s Gymnastics Club is free CSS template for gyms and fitness centers.")
 
     class Meta:
         verbose_name = "Features Section Heading"
@@ -354,7 +354,7 @@ class SiteFooter(SingletonModel):
     HTML equivalent: <footer> <p>Copyright...</p>
     """
     copyright_text  = models.CharField(max_length=300,
-                          default="Copyright © 2024 Training Studio",
+                          default="Copyright © 2024 Bendre’s Gymnastics Club",
                           help_text="Copyright line. Year is shown as typed.")
     show_designer_credit = models.BooleanField(default=True,
                           help_text="Show 'Designed by TemplateMo' line")

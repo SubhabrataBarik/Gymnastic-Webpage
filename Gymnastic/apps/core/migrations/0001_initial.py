@@ -79,7 +79,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('section_title', models.CharField(default='Choose', max_length=100)),
                 ('section_title_em', models.CharField(default='Program', help_text='Italic/highlighted word in section heading (<em>)', max_length=100)),
-                ('section_description', models.TextField(default='Training Studio is free CSS template for gyms and fitness centers.')),
+                ('section_description', models.TextField(default='Bendre’s Gymnastics Club is free CSS template for gyms and fitness centers.')),
             ],
             options={
                 'verbose_name': 'Features Section Heading',
@@ -117,7 +117,7 @@ class Migration(migrations.Migration):
             name='SiteFooter',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('copyright_text', models.CharField(default='Copyright © 2024 Training Studio', help_text='Copyright line. Year is shown as typed.', max_length=300)),
+                ('copyright_text', models.CharField(default='Copyright © 2024 Bendre’s Gymnastics Club', help_text='Copyright line. Year is shown as typed.', max_length=300)),
                 ('show_designer_credit', models.BooleanField(default=True, help_text="Show 'Designed by TemplateMo' line")),
             ],
             options={

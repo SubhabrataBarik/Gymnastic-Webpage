@@ -122,7 +122,7 @@ class Command(BaseCommand):
             'section_title':       'Choose',
             'section_title_em':    'Program',
             'section_description': (
-                'Training Studio is free CSS template for gyms and fitness centers. '
+                'Bendre’s Gymnastics Club is free CSS template for gyms and fitness centers. '
                 'You are allowed to use this layout for your business website.'
             ),
         })
@@ -417,7 +417,7 @@ class Command(BaseCommand):
     # ─────────────────────────────────────────────────────────
     def _seed_footer(self):
         SiteFooter.objects.update_or_create(pk=1, defaults={
-            'copyright_text':      'Copyright © 2020 Training Studio - Designed by TemplateMo. Distributed by ThemeWagon',
+            'copyright_text':      'Copyright © 2020 Bendre’s Gymnastics Club - Designed by TemplateMo. Distributed by ThemeWagon',
             'show_designer_credit': True,
         })
         self.stdout.write('  ✓ Footer')
