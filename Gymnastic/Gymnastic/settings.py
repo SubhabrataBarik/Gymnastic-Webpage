@@ -24,7 +24,7 @@ import os
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-406&(^cux7dn3e3sgmo1zsvxx@)tt3mr$yhg%pwu)lc!39w*nx')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Check if we're on PythonAnywhere
 if 'PYTHONANYWHERE' in os.environ:
@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default email sender
-DEFAULT_FROM_EMAIL = 'subhabratabarik7@gmail.com'
+DEFAULT_FROM_EMAIL = 'tejasbendre92@gmail.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
