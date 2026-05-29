@@ -36,7 +36,7 @@ This message was automatically sent from the contact form on Bendre's Gymnastics
             
             # If no recipients are configured, fall back to default
             if not recipient_list:
-                recipient_list = ['bariksubhabrata945gmail.com', 'bendregymnasticclub@gmail.com']
+                recipient_list = ['bariksubhabrata945gmail.com', ' tejasbendre92@gmail.com']
             
             try:
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)
